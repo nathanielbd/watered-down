@@ -1,7 +1,9 @@
 import json
 from flask import Flask, request, Response, jsonify, render_template
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 notes = {
     0: 'Frontend is using React',
