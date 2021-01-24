@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/watered-down/static/css/main.18785798.chunk.css",
+    "main.js": "/watered-down/static/js/main.67613ffc.chunk.js",
+    "main.js.map": "/watered-down/static/js/main.67613ffc.chunk.js.map",
+    "runtime-main.js": "/watered-down/static/js/runtime-main.8179bedf.js",
+    "runtime-main.js.map": "/watered-down/static/js/runtime-main.8179bedf.js.map",
+    "static/js/2.4c91a390.chunk.js": "/watered-down/static/js/2.4c91a390.chunk.js",
+    "static/js/2.4c91a390.chunk.js.map": "/watered-down/static/js/2.4c91a390.chunk.js.map",
+    "index.html": "/watered-down/index.html",
+    "static/css/main.18785798.chunk.css.map": "/watered-down/static/css/main.18785798.chunk.css.map",
+    "static/js/2.4c91a390.chunk.js.LICENSE.txt": "/watered-down/static/js/2.4c91a390.chunk.js.LICENSE.txt",
+    "static/media/bootstrap.css": "/watered-down/static/media/Raleway-VariableFont_wght.942638e6.ttf",
+    "static/media/gallon.e4a1883c.png": "/watered-down/static/media/gallon.e4a1883c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8179bedf.js",
+    "static/js/2.4c91a390.chunk.js",
+    "static/css/main.18785798.chunk.css",
+    "static/js/main.67613ffc.chunk.js"
+  ]
+}
