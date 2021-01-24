@@ -5173,7 +5173,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #edb80a;
+  background-color: var(--ColumbiaBlue);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 1rem;
@@ -5233,7 +5233,7 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgb(133, 0, 0);
+  background-color: var(--themeBlueDrk);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -5403,6 +5403,8 @@ input[type="button"].btn-block {
 .accordion > .card > .card-header {
   border-radius: 0;
   margin-bottom: -1px;
+  font-size: 20px;
+  color: var(--UranianBlue);
 }
 
 .breadcrumb {
