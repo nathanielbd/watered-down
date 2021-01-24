@@ -2,9 +2,16 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Intro from "./Intro";
+import Image from "react-bootstrap/Image";
+import Graph from "./Graph";
+import Logo from "../Watered_Down_Logo.png"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Stats from "./Stats";
 
+const style ={
+  height:"50px",
+  width: "215px"
+}
 var routes = 
 [
     {
@@ -13,15 +20,15 @@ var routes =
       main: () => <Home />,
     },
     {
-      path: "/1",
+      path: "/Stats",
       main: () => <Tab1 />,
     },
     {
-      path: "/2",
+      path: "/AddNew",
       main: () => <Tab2 />,
     },
     {
-      path: "/3",
+      path: "/Graph",
       main: () => <Tab3 />,
     },
 ];
@@ -40,7 +47,7 @@ function Tab2()
 }
 function Tab3() 
 { 
-    return ( <h2> third page </h2>);
+    return ( <Graph/>);
 }
 
 export default function NavigationBar() {
@@ -49,12 +56,13 @@ export default function NavigationBar() {
     <Router basename={`${process.env.PUBLIC_URL}/`}>
       <div>
         <Navbar>
-          <Navbar.Brand>Watered Down</Navbar.Brand>
+          <Navbar.Brand><Image src ={Logo} style ={style}/></Navbar.Brand>
           <Nav>
-            <Nav.Link><Link to="/">Home</Link></Nav.Link>
-            <Nav.Link><Link to="/1">View Water Use</Link></Nav.Link>
-            <Nav.Link><Link to="/2">Add Appliance</Link></Nav.Link>
-            <Nav.Link><Link to="/3">Meet the Creators</Link></Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/Stats">View Water Use</Nav.Link>
+            <Nav.Link href="/AddNew">Add Appliance</Nav.Link>
+            <Nav.Link href="/Graph">Graph</Nav.Link>
+
           </Nav>
         </Navbar>
         <Switch>
