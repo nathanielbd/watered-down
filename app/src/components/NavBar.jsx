@@ -2,9 +2,16 @@ import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Intro from "./Intro";
+import Image from "react-bootstrap/Image";
+import Graph from "./Graph";
+import Logo from "../Watered_Down_Logo.png"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Stats from "./Stats";
 
+const style ={
+  height:"50px",
+  width: "215px"
+}
 var routes = 
 [
     {
@@ -40,7 +47,7 @@ function Tab2()
 }
 function Tab3() 
 { 
-    return ( <h2> third page </h2>);
+    return ( <Graph/>);
 }
 
 export default function NavigationBar() {
@@ -48,12 +55,12 @@ export default function NavigationBar() {
     <Router>
       <div>
         <Navbar>
-          <Navbar.Brand>Watered Down</Navbar.Brand>
+          <Navbar.Brand><Image src ={Logo} style ={style}/></Navbar.Brand>
           <Nav>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/1">View Water Use</Nav.Link>
             <Nav.Link href="/2">Add Appliance</Nav.Link>
-            <Nav.Link href="/3">Meet the Creators</Nav.Link>
+            <Nav.Link href="/3">Graph</Nav.Link>
           </Nav>
         </Navbar>
         <Switch>

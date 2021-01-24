@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
-import gallon from './gallon.png';
+import gallon from '../gallon.png';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 
@@ -22,7 +22,7 @@ class Stats extends Component {
     super(props);
     this.state = {
       gallons: 3,
-      appliances: ["shower", "sink", "toilet",],
+      appliances: ["Shower", "Sink", "Toilet",],
       shower: 1,
       sink: 1,
       toilet: 4
@@ -33,6 +33,7 @@ class Stats extends Component {
           <div>
             {[...Array(gallons),].map((e,i) =>{ 
               return <Image src= {gallon} fluid width = "200" height ="300"/>})}
+
             <div style ={title}> Total Water Usage is {this.state.gallons} Gallons </div>
             <h5> Select option below to view water usage for specific appliance: </h5>
             <div>
