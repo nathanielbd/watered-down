@@ -16,13 +16,14 @@ class Intro extends Component
             <Jumbotron style = {styles}>
                 <h1 >Welcome to Watered Down!</h1>
                 <p>
-                    Have you ever wondered how much water you're using? Watered Down has got you covered! 
-                    Place QR codes near every water appliance and scan them every time you use them. We track your usage for you and display it here at Watered Down! 
-                    Hopefully, being able to see just how much water you use will inspire you to Water Down your usage.
+                Watered Down helps households meter their water usage. According to the EPA, the act of metering alone can reduce consumption by 20-40%.
+
+Our web-app allows users to easily print stickers to put on their water-consuming facilities like toilets, faucets, showers, and dishwashers. These stickers have a QR code which interfaces with our API to track the user's water usage whenever they are scanned. The web-app also comes with a dashboard to monitor the user's water usage visually.
+
                 </p>
 
                 <p>
-                    <Button >Learn More</Button>
+                     A Minnehack 2021 project by William Chan, Evan Tredal, Lynh Tran, and Nathaniel Budijuno
                 </p>
             </Jumbotron>
         </div>
