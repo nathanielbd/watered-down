@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/watered-down/static/css/main.d1b5e103.chunk.css",
-    "main.js": "/watered-down/static/js/main.0bb947be.chunk.js",
-    "main.js.map": "/watered-down/static/js/main.0bb947be.chunk.js.map",
+    "main.js": "/watered-down/static/js/main.c38ee78a.chunk.js",
+    "main.js.map": "/watered-down/static/js/main.c38ee78a.chunk.js.map",
     "runtime-main.js": "/watered-down/static/js/runtime-main.8179bedf.js",
     "runtime-main.js.map": "/watered-down/static/js/runtime-main.8179bedf.js.map",
     "static/js/2.59f7040d.chunk.js": "/watered-down/static/js/2.59f7040d.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.8179bedf.js",
     "static/js/2.59f7040d.chunk.js",
     "static/css/main.d1b5e103.chunk.css",
-    "static/js/main.0bb947be.chunk.js"
+    "static/js/main.c38ee78a.chunk.js"
   ]
 }
