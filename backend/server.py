@@ -12,7 +12,7 @@ data = pd.DataFrame(columns=['user_id', 'application_id', 'gallons', 'timestamp'
 
 @app.route("/", methods=['GET', 'POST'])
 def landing():
-    return render_template("index.html")
+    return redirect("https://nathanielbd.github.io/watered-down/") #render_template("index.html")
 
 @app.route('/api', methods=['GET', 'POST'])
 def serve():
@@ -24,6 +24,18 @@ def serve():
         print(f'added {info}')
         return redirect('/2')
 
+@app.route('/api/user/record/<user_id>/<application_id>/<gallons>/')
+def record(user_id, application_id, gallons):
+    timestamp = time()
+    info = {'user_id': user_id,
+                        'application_id': application_id,
+                        'gallons': gallons,
+                        'timestamp': timestamp}
+    global data
+    data = data.append(info, ignore_index=True)
+    print(f'added {info}')
+    return redirect('/2')
+
 @app.route('/api/user/<user>')
 def user_serve(user):
     subset = data[data['user_id']==user]
@@ -33,6 +45,8 @@ def user_serve(user):
 def application_serve(application_id):
     subset = data[data['application_id']==application_id]
     return subset.to_json(orient='records')
+
+
 
 @app.route('/api/applications')
 def applications():
