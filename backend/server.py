@@ -22,10 +22,19 @@ def serve():
         global data
         data = data.append(info, ignore_index=True)
         print(f'added {info}')
-        return redirect('/2')
+        return redirect('https://nathanielbd.github.io/watered-down/2')
 
-@app.route('/api/user/record/<user_id>/<application_id>/<gallons>/')
-def record(user_id, application_id, gallons):
+@app.route('/api/record/')
+def record():
+    info = request.args.to_dict(flat=True)
+    info['timestamp'] = time()
+    global data
+    data = data.append(info, ignore_index=True)
+    print(f'added {info}')
+    return redirect('https://nathanielbd.github.io/watered-down/2')
+
+@app.route('/api/record/<user_id>/<application_id>/<gallons>/')
+def record_route(user_id, application_id, gallons):
     timestamp = time()
     info = {'user_id': user_id,
                         'application_id': application_id,
@@ -34,7 +43,7 @@ def record(user_id, application_id, gallons):
     global data
     data = data.append(info, ignore_index=True)
     print(f'added {info}')
-    return redirect('/2')
+    return redirect('https://nathanielbd.github.io/watered-down/2')
 
 @app.route('/api/user/<user>')
 def user_serve(user):
@@ -45,8 +54,6 @@ def user_serve(user):
 def application_serve(application_id):
     subset = data[data['application_id']==application_id]
     return subset.to_json(orient='records')
-
-
 
 @app.route('/api/applications')
 def applications():
