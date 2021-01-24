@@ -1,35 +1,32 @@
 import json
-from flask import Flask, request, Response, jsonify, render_template
+from flask import Flask, request, Response, jsonify, redirect, render_template
+import pandas as pd
+from time import time
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-notes = {
-    0: 'Frontend is using React',
-    1: 'Backend is using Flask',
-    2: 'Have fun!'
-}
+# for demo purposes only
+data = pd.DataFrame(columns=['user_id', 'application_id', 'gallons', 'timestamp'])
 
 @app.route("/", methods=['GET', 'POST'])
 def landing():
     return render_template("index.html")
 
-@app.route('/api/v1/notes', methods=['GET','POST'])
+@app.route('/api/')
 def serve():
-    if request.method == 'POST' and request.is_json:
-        new_note = request.get_json()['note']
-        new_note_id = len(notes)
-        notes[new_note_id] = new_note
+    if request.is_json:
+        info = request.get_json()
+        info['timestamp'] = time()
+        data = data.append(info, ignore_index=True)
+        print(f'added {info}')
+        return redirect('/2')
 
-    return Response(
-        json.dumps(notes),
-        mimetype='application/json',
-        headers={
-            'Cache-Control': 'no-cache',
-            'Access-Control-Allow-Origin': '*'
-        }
-    )
+@app.route('/api/user/<user>')
+def serve(user):
+    subset = data[data['user_id']==user]
+    return json.dumps(dict(zip(data['application_id'], data['gallons'], data['timestamp'])))
 
 if __name__ == '__main__':
     app.run(

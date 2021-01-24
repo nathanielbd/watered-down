@@ -109,3 +109,4 @@ pip-selfcheck.json
 
 app/backend/static/bundle.js
 backend/env/
+app/.eslintcache
