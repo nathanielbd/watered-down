@@ -44,16 +44,17 @@ function Tab3()
 }
 
 export default function NavigationBar() {
+  document.title = 'Watered Down'
   return (
-    <Router>
+    <Router basename={`${process.env.PUBLIC_URL}/`}>
       <div>
         <Navbar>
           <Navbar.Brand>Watered Down</Navbar.Brand>
           <Nav>
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/1">View Water Use</Nav.Link>
-            <Nav.Link href="/2">Add Appliance</Nav.Link>
-            <Nav.Link href="/3">Meet the Creators</Nav.Link>
+            <Nav.Link><Link to="/">Home</Link></Nav.Link>
+            <Nav.Link><Link to="/1">View Water Use</Link></Nav.Link>
+            <Nav.Link><Link to="/2">Add Appliance</Link></Nav.Link>
+            <Nav.Link><Link to="/3">Meet the Creators</Link></Nav.Link>
           </Nav>
         </Navbar>
         <Switch>

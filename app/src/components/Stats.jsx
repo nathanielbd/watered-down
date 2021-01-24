@@ -71,7 +71,6 @@ class Stats extends Component {
             )})}
         </Accordion>
         </div>
-            <Button href="/2" style ={styles}>Add Appliance</Button>
           </div> );
     }
 }
