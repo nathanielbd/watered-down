@@ -56,7 +56,10 @@ class Stats extends Component {
         <Accordion>
             {this.state.appliances.map((val, idx) => {
                 return (
-                    <Card>
+                    <Card style={{width: '50rem',
+                    margin: '0 auto', 
+                    float: 'none',
+                    'margin-bottom': '10px',}}>
                     <Card.Header>
                         <Accordion.Toggle as ={Card.Header} eventKey={val}> 
                             {val}

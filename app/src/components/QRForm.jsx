@@ -42,7 +42,7 @@ class QR extends Component {
             return <QRPrint app={this.state.facility} gallons={this.state.gallons} src={`http://api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?user_id=${this.state.id}%26application_id=${this.state.facility}%26gallons=${this.state.gallons}&size=200x200`}/>
         }
         return (
-            <Card className = 'align-items-center'>
+            <Card className = 'align-items-center'style ={{ width: '50rem', margin: '0 auto', float: 'none', 'margin-bottom': '10px',}}>
                 <Card.Header as="h3">   Add an Appliance!   </Card.Header>
             <Form as='form' id='rs' onSubmit={this.handleSubmit}>
                 <Form.Group  controlId="appliance_id">
