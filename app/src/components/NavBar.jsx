@@ -7,6 +7,7 @@ import Graph from "./Graph";
 import Logo from "../Watered_Down_Logo.png"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Stats from "./Stats";
+import QRForm from "./QRForm";
 
 const style ={
   height:"50px",
@@ -43,7 +44,7 @@ function Tab1()
 }
 function Tab2() 
 {
-    return ( <h2> second page </h2>);
+    return ( <QRForm/>);
 }
 function Tab3() 
 { 
