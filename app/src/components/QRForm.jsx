@@ -7,7 +7,7 @@ class QR extends Component {
     constructor(props) {
         super(props);
         this.state={
-            url: "http://google.com",
+            url: "http://watered-down.zeet.app",
             id: "Evan",
             facility: "",
             gallons: ""
@@ -42,7 +42,7 @@ class QR extends Component {
                     <Form.Label>How many gallons in a single use?</Form.Label>
                     <Form.Control type="text" value={this.state.gallons} onChange={this.handleGallonsChange} required/>
                 </Form.Group>
-                <Button type="submit" href={`http://api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?UserID=${this.state.id}%26FacilityID=${this.state.facility}%26Gallons=${this.state.gallons}&size=200x200`}>
+                <Button type="submit" href={`http://api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?user_id=${this.state.id}%26application_id=${this.state.facility}%26gallons=${this.state.gallons}&size=200x200`}>
                         Get QR Code
                 </Button>
             </Form>
