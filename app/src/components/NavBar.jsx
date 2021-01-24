@@ -40,7 +40,7 @@ function Home()
 }
 function Tab1() 
 {
-    return ( <Stats userId="bob"/>); 
+    return ( <Stats userId={window.user_id}/>); 
 }
 function Tab2() 
 {
@@ -52,7 +52,11 @@ function Tab3()
 }
 
 export default function NavigationBar() {
-  document.title = 'Watered Down'
+  document.title = 'Watered Down';
+  window.onload = () => {
+    var user_id = prompt("What is your name?");
+    window.user_id = user_id;
+  };
   return (
     <Router basename={`${process.env.PUBLIC_URL}/`}>
       <div>

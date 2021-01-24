@@ -13,7 +13,7 @@ class QR extends Component {
         super(props);
         this.state={
             url: "https://watered-down.zeet.app/api/record/",
-            id: "Evan",
+            id: window.user_id,
             facility: "",
             gallons: "",
             submitted: false
