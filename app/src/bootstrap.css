@@ -13,10 +13,10 @@
   --themeGreenDrk: #007965;
   --UranianBlue: #b6dcfe;
   --ColumbiaBlue: #cdedfd;
-  --Lavendar: #dec5e3;
+  --Lavendar: #cb90d6;
 
   --bodyText: var(--themeBlueDrk);
-  --txtMuted: #cacaca;
+  --txtMuted: #6cb4ee;
   --bodyBkgd: #white;
 
   --jumbotronBkgd: white;
@@ -35,7 +35,7 @@
   --btn1: var(--themeBlueDrk);
   --btn1Brdr: var(--UranianBlue);
   --btn1Txt: white;
-  --btn1Hover: var(var(--Lavendar));
+  --btn1Hover: var(--Lavendar);
   --btn1HoverBrdr: #000000;
 
   --btn2Txt: white;
@@ -646,7 +646,7 @@ pre code {
 @font-face {
   font-family: "Quicksand";
   src: local("Quicksand"),
-    url(./fonts/Quicksand/Quicksand-VariableFont_wght.ttf) format("truetype");
+    url(./fonts/Quicksand/static/Quicksand-Medium.ttf) format("truetype");
 }
 @font-face {
   font-family: "Noto_Serif_JP";
