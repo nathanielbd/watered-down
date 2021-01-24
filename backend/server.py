@@ -29,6 +29,16 @@ def user_serve(user):
     subset = data[data['user_id']==user]
     return subset.to_json(orient='records')
 
+@app.route('/api/application/<application_id>')
+def application_serve(application_id):
+    subset = data[data['application_id']==application_id]
+    return subset.to_json(orient='records')
+
+@app.route('/api/applications')
+def applications():
+    return data['application_id'].to_json(orient='records')
+
+
 if __name__ == '__main__':
     app.run(
         host='0.0.0.0',
