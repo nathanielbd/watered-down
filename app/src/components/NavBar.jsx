@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Intro from "./Intro";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Stats from "./Stats";
+import QRForm from "./QRForm";
 
 var routes = 
 [
@@ -36,7 +37,7 @@ function Tab1()
 }
 function Tab2() 
 {
-    return ( <h2> second page </h2>);
+    return ( <QRForm/>);
 }
 function Tab3() 
 { 
