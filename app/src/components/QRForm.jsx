@@ -7,7 +7,7 @@ class QR extends Component {
     constructor(props) {
         super(props);
         this.state={
-            url: "http://watered-down.zeet.app",
+            url: "https://watered-down.zeet.app/api/record/",
             id: "Evan",
             facility: "",
             gallons: ""
