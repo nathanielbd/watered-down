@@ -14,19 +14,20 @@ data = pd.DataFrame(columns=['user_id', 'application_id', 'gallons', 'timestamp'
 def landing():
     return render_template("index.html")
 
-@app.route('/api/')
+@app.route('/api', methods=['GET', 'POST'])
 def serve():
     if request.is_json:
         info = request.get_json()
         info['timestamp'] = time()
+        global data
         data = data.append(info, ignore_index=True)
         print(f'added {info}')
         return redirect('/2')
 
 @app.route('/api/user/<user>')
-def serve(user):
+def user_serve(user):
     subset = data[data['user_id']==user]
-    return json.dumps(dict(zip(data['application_id'], data['gallons'], data['timestamp'])))
+    return subset.to_json(orient='records')
 
 if __name__ == '__main__':
     app.run(
