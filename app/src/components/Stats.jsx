@@ -30,9 +30,9 @@ class Stats extends Component {
 
   async componentDidMount() {
     const userData = await getData(`https://watered-down.zeet.app/api/user/${this.props.userId}`);
-    const gallons = userData.reduce((sum, rec) => sum + rec.gallons, 0);
+    const gallons = userData.reduce((sum, rec) => sum + parseInt(rec.gallons), 0);
     const appliances = userData.reduce((apps, rec) => apps.includes(rec['application_id']) ? apps : apps.concat([rec['application_id']]), []);
-    const galPerApp = appliances.map((app) => userData.reduce((tot, rec) => rec['application_id']==app ? tot+rec['gallons'] : tot, 0));
+    const galPerApp = appliances.map((app) => userData.reduce((tot, rec) => rec['application_id']==app ? tot+parseInt(rec['gallons']) : tot, 0));
     this.setState({
       gallons: gallons,
       appliances: appliances,
@@ -50,7 +50,7 @@ class Stats extends Component {
             {[...Array(this.state.gallons),].map((e,i) =>{ 
               return <Image src= {gallon} fluid width = "200" height ="300"/>})}
 
-            <div style ={title}> Total Water Usage is {this.state.gallons} Gallons </div>
+            <div style ={title}> Today's water usage is {this.state.gallons} Gallons </div>
             <h5> Select option below to view water usage for specific appliance: </h5>
             <div>
         <Accordion>
@@ -66,6 +66,9 @@ class Stats extends Component {
                         <Card.Body>
                             {[...Array(this.state.galPerApp[idx]),].map((e, i) =>{ 
                                 return <Image src= {gallon} fluid width = "200" height ="300"/>})}
+                            <Card.Text>
+                              You used {val} to consume {this.state.galPerApp[idx]} gallons.
+                            </Card.Text>
                         </Card.Body>
                     </Accordion.Collapse>
                     </Card>
