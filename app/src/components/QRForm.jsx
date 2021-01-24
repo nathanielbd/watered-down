@@ -37,7 +37,7 @@ class QR extends Component {
 
     render() {
         return (
-            <Card className = 'align-items-center'>
+            <Card className = 'align-items-center'style ={{ width: '50rem', margin: '0 auto', float: 'none', 'margin-bottom': '10px',}}>
                 <Card.Header as="h3">   Add an Appliance!   </Card.Header>
             <Form as='form' id='rs' onSubmit={this.handleSubmit}>
                 <Form.Group  controlId="appliance_id">
