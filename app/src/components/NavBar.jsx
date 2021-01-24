@@ -32,7 +32,7 @@ function Home()
 }
 function Tab1() 
 {
-    return ( <Stats/>); 
+    return ( <Stats userId="bob"/>); 
 }
 function Tab2() 
 {
