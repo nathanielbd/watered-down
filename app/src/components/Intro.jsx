@@ -37,7 +37,6 @@ class Intro extends Component
                         <Image src={gallon} width ="100em"/>
                         <Image src={gallon} width ="100em"/>
                         <Image src={gallon} width ="100em"/>
-                <Button href="#https://github.com/nathanielbd/watered-down">Check out our code!</Button>
             </Card.Body>
             </Card>
         </div>
