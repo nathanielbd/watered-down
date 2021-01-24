@@ -2837,6 +2837,7 @@ fieldset:disabled a.btn {
   color: var(--btn1Txt);
   background-color: var(--btn1Hover);
   border-color: var(--btn1HoverBrdr);
+  color: var(--btn1HoverBrdr); /* White text on white background in Chrome */
 }
 
 .btn-primary:focus,
