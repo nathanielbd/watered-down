@@ -1,12 +1,18 @@
 import json
-from flask import Flask, request, Response, jsonify, redirect
+from flask import Flask, request, Response, jsonify, redirect, render_template
 import pandas as pd
 from time import time
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # for demo purposes only
 data = pd.DataFrame(columns=['user_id', 'application_id', 'gallons', 'timestamp'])
+
+@app.route("/", methods=['GET', 'POST'])
+def landing():
+    return render_template("index.html")
 
 @app.route('/api/')
 def serve():
