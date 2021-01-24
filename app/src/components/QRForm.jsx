@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import QRPrint from './QRPrint';
 import Card from 'react-bootstrap/Card';
 
 const form ={
@@ -14,7 +15,8 @@ class QR extends Component {
             url: "https://watered-down.zeet.app/api/record/",
             id: "Evan",
             facility: "",
-            gallons: ""
+            gallons: "",
+            submitted: false
         };
 
         this.handleFacilityChange = this.handleFacilityChange.bind(this);
@@ -36,6 +38,9 @@ class QR extends Component {
     }
 
     render() {
+        if (this.state.submitted) {
+            return <QRPrint app={this.state.facility} gallons={this.state.gallons} src={`http://api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?user_id=${this.state.id}%26application_id=${this.state.facility}%26gallons=${this.state.gallons}&size=200x200`}/>
+        }
         return (
             <Card className = 'align-items-center'>
                 <Card.Header as="h3">   Add an Appliance!   </Card.Header>
@@ -48,8 +53,8 @@ class QR extends Component {
                     <Form.Label as ="h4" >How many gallons in a single use?</Form.Label>
                     <Form.Control style ={form} type="text" value={this.state.gallons} onChange={this.handleGallonsChange} required placeholder="# of gallons"/>
                 </Form.Group>
-                <Button type="submit" href={`http://api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?user_id=${this.state.id}%26application_id=${this.state.facility}%26gallons=${this.state.gallons}&size=200x200`}>
-                        Get QR Code
+                <Button onClick={() => this.setState({ submitted: true })}>
+                    Get QR code
                 </Button>
             </Form>
             </Card>
