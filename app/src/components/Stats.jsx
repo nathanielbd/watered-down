@@ -25,13 +25,6 @@ async function getData(url) {
 class Stats extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      gallons: 3,
-      appliances: ["Shower", "Sink", "Toilet",],
-      shower: 1,
-      sink: 1,
-      toilet: 4
-    };
     this.state = { isLoading: true };
   }
 

@@ -59,11 +59,10 @@ export default function NavigationBar() {
         <Navbar>
           <Navbar.Brand><Image src ={Logo} style ={style}/></Navbar.Brand>
           <Nav>
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/Stats">View Water Use</Nav.Link>
-            <Nav.Link href="/AddNew">Add Appliance</Nav.Link>
-            <Nav.Link href="/Graph">Graph</Nav.Link>
-
+            <Nav.Link><Link to="/">Home</Link></Nav.Link>
+            <Nav.Link><Link to="/Stats">View Water Use</Link></Nav.Link>
+            <Nav.Link><Link to="/AddNew">Add Appliance</Link></Nav.Link>
+            <Nav.Link><Link to="/Graph">Graph</Link></Nav.Link>
           </Nav>
         </Navbar>
         <Switch>
