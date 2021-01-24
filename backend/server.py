@@ -1,13 +1,19 @@
 import json
-from flask import Flask, request, Response, jsonify
+from flask import Flask, request, Response, jsonify, render_template
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 notes = {
     0: 'Frontend is using React',
     1: 'Backend is using Flask',
     2: 'Have fun!'
 }
+
+@app.route("/", methods=['GET', 'POST'])
+def landing():
+    return render_template("index.html")
 
 @app.route('/api/v1/notes', methods=['GET','POST'])
 def serve():
