@@ -42,10 +42,8 @@ class QR extends Component {
                     <Form.Label>How many gallons in a single use?</Form.Label>
                     <Form.Control type="text" value={this.state.gallons} onChange={this.handleGallonsChange} required/>
                 </Form.Group>
-                <Button type="submit">
-                    <Link href={`http://www.api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?UserID=${this.state.id}%26FacilityID=${this.state.facility}%26Gallons=${this.state.gallons}&size=200x200`}>
+                <Button type="submit" href={`http://api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?UserID=${this.state.id}%26FacilityID=${this.state.facility}%26Gallons=${this.state.gallons}&size=200x200`}>
                         Get QR Code
-                    </Link>
                 </Button>
             </Form>
         );
