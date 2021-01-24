@@ -39,7 +39,7 @@ function Home()
 }
 function Tab1() 
 {
-    return ( <Stats/>); 
+    return ( <Stats userId="bob"/>); 
 }
 function Tab2() 
 {
@@ -51,8 +51,9 @@ function Tab3()
 }
 
 export default function NavigationBar() {
+  document.title = 'Watered Down'
   return (
-    <Router>
+    <Router basename={`${process.env.PUBLIC_URL}/`}>
       <div>
         <Navbar>
           <Navbar.Brand><Image src ={Logo} style ={style}/></Navbar.Brand>
@@ -61,6 +62,7 @@ export default function NavigationBar() {
             <Nav.Link href="/Stats">View Water Use</Nav.Link>
             <Nav.Link href="/AddNew">Add Appliance</Nav.Link>
             <Nav.Link href="/Graph">Graph</Nav.Link>
+
           </Nav>
         </Navbar>
         <Switch>
