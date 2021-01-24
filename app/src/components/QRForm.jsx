@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
+const form ={
+    width: "40em",
+    'text-align':"center"
+}
 class QR extends Component {
     constructor(props) {
         super(props);
@@ -33,19 +37,22 @@ class QR extends Component {
 
     render() {
         return (
+            <Card className = 'align-items-center'>
+                <Card.Header as="h3">   Add an Appliance!   </Card.Header>
             <Form as='form' id='rs' onSubmit={this.handleSubmit}>
-                <Form.Group controlId="appliance_id">
-                    <Form.Label>Choose a name for your appliance</Form.Label>
-                    <Form.Control type="text" value={this.state.facility} onChange={this.handleFacilityChange} required/>
+                <Form.Group  controlId="appliance_id">
+                    <Form.Label  as ="h4" >Choose a name for your appliance</Form.Label>
+                    <Form.Control style ={form} type="text" value={this.state.facility} onChange={this.handleFacilityChange} required placeholder="appliance name"/>
                 </Form.Group>
                 <Form.Group controlId="gallons_total">
-                    <Form.Label>How many gallons in a single use?</Form.Label>
-                    <Form.Control type="text" value={this.state.gallons} onChange={this.handleGallonsChange} required/>
+                    <Form.Label as ="h4" >How many gallons in a single use?</Form.Label>
+                    <Form.Control style ={form} type="text" value={this.state.gallons} onChange={this.handleGallonsChange} required placeholder="# of gallons"/>
                 </Form.Group>
                 <Button type="submit" href={`http://api.qrserver.com/v1/create-qr-code/?data=${this.state.url}?user_id=${this.state.id}%26application_id=${this.state.facility}%26gallons=${this.state.gallons}&size=200x200`}>
                         Get QR Code
                 </Button>
             </Form>
+            </Card>
         );
     }
 }
