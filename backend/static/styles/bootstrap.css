@@ -33,9 +33,9 @@
   --hamburgerOutline: #090a41;
 
   --btn1: var(--themeBlueDrk);
-  --btn1Brdr: #ffffff;
+  --btn1Brdr: var(--UranianBlue);
   --btn1Txt: white;
-  --btn1Hover: var(--themeBlueDrk);
+  --btn1Hover: var(var(--Lavendar));
   --btn1HoverBrdr: #000000;
 
   --btn2Txt: white;
@@ -2237,7 +2237,7 @@ pre code {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--dropdownDefaultTxt);
+  /*color: var(--dropdownDefaultTxt);*/
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid var(--dropdownOutline);
@@ -2837,6 +2837,7 @@ fieldset:disabled a.btn {
   color: var(--btn1Txt);
   background-color: var(--btn1Hover);
   border-color: var(--btn1HoverBrdr);
+  color: var(--btn1HoverBrdr); /* White text on white background in Chrome */
 }
 
 .btn-primary:focus,
@@ -5173,7 +5174,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: var(--ColumbiaBlue);
+  background-color: var(--UranianBlue);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 1rem;
@@ -5232,9 +5233,10 @@ input[type="button"].btn-block {
 
 .card-header {
   padding: 0.75rem 1.25rem;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
   background-color: var(--themeBlueDrk);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  color: white;
 }
 
 .card-header:first-child {
