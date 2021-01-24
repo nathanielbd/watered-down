@@ -23,7 +23,7 @@ Our web-app allows users to easily print stickers to put on their water-consumin
                 </p>
 
                 <p>
-                     A Minnehack 2021 project by William Chan, Evan Tredal, Lynh Tran, and Nathaniel Budijuno
+                     A Minnehack 2021 project by William Chan, Evan Tredal, Lynh Tran, and Nathaniel Budijono
                 </p>
             </Jumbotron>
         </div>
