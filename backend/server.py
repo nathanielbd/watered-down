@@ -32,7 +32,8 @@ def record():
     global data
     data = data.append(info, ignore_index=True)
     print(f'added {info}')
-    return redirect(frontend_URL)
+    # print(data)
+    return render_template("confirmation.html", user_id=info["user_id"], gallons=info["gallons"], application_id=info["application_id"], frontEnd=frontend_URL)
 
 @app.route('/api/record/<user_id>/<application_id>/<gallons>/')
 def record_route(user_id, application_id, gallons):
