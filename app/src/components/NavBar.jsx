@@ -20,15 +20,15 @@ var routes =
       main: () => <Home />,
     },
     {
-      path: "/1",
+      path: "/Stats",
       main: () => <Tab1 />,
     },
     {
-      path: "/2",
+      path: "/AddNew",
       main: () => <Tab2 />,
     },
     {
-      path: "/3",
+      path: "/Graph",
       main: () => <Tab3 />,
     },
 ];
@@ -58,9 +58,9 @@ export default function NavigationBar() {
           <Navbar.Brand><Image src ={Logo} style ={style}/></Navbar.Brand>
           <Nav>
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/1">View Water Use</Nav.Link>
-            <Nav.Link href="/2">Add Appliance</Nav.Link>
-            <Nav.Link href="/3">Graph</Nav.Link>
+            <Nav.Link href="/Stats">View Water Use</Nav.Link>
+            <Nav.Link href="/AddNew">Add Appliance</Nav.Link>
+            <Nav.Link href="/Graph">Graph</Nav.Link>
           </Nav>
         </Navbar>
         <Switch>
