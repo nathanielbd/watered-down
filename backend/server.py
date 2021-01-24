@@ -10,9 +10,10 @@ CORS(app)
 # for demo purposes only
 data = pd.DataFrame(columns=['user_id', 'application_id', 'gallons', 'timestamp'])
 
+frontend_URL = "https://nathanielbd.github.io/watered-down/"
 @app.route("/", methods=['GET', 'POST'])
 def landing():
-    return redirect("https://nathanielbd.github.io/watered-down/") #render_template("index.html")
+    return redirect(frontend_URL) #render_template("index.html")
 
 @app.route('/api', methods=['GET', 'POST'])
 def serve():
@@ -22,7 +23,7 @@ def serve():
         global data
         data = data.append(info, ignore_index=True)
         print(f'added {info}')
-        return redirect('https://nathanielbd.github.io/watered-down/2')
+        return redirect(frontend_URL)
 
 @app.route('/api/record/')
 def record():
@@ -31,7 +32,7 @@ def record():
     global data
     data = data.append(info, ignore_index=True)
     print(f'added {info}')
-    return redirect('https://nathanielbd.github.io/watered-down/2')
+    return redirect(frontend_URL)
 
 @app.route('/api/record/<user_id>/<application_id>/<gallons>/')
 def record_route(user_id, application_id, gallons):
@@ -43,7 +44,7 @@ def record_route(user_id, application_id, gallons):
     global data
     data = data.append(info, ignore_index=True)
     print(f'added {info}')
-    return redirect('https://nathanielbd.github.io/watered-down/2')
+    return redirect(frontend_URL)
 
 @app.route('/api/user/<user>')
 def user_serve(user):
