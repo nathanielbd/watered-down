@@ -9,7 +9,8 @@ class QRPrint extends Component {
 
     render() {
         return (
-            <Card>
+            <center>
+            <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={this.props.src}/>
                 <Card.Body>
                     <Card.Title>{this.props.app}</Card.Title>
@@ -21,6 +22,7 @@ class QRPrint extends Component {
                     </Button>
                 </Card.Body>
             </Card>
+            </center>
         );
     }
 }
